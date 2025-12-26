@@ -81,7 +81,7 @@ export function Hero() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
                     >
-                        <span className="text-neon-violet font-semibold">SMK RPL Student</span> | Mobile & Frontend Developer
+                        <span className="text-neon-cyan font-semibold">SMK RPL Student</span> | Solve problems. Engineer systems. Ship impact.
                     </motion.p>
                 </motion.div>
 
