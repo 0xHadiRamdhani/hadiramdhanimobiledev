@@ -1,14 +1,15 @@
 import { Card } from "./ui/Card";
+import { ScrollReveal } from "./ui/ScrollReveal";
 
 export function About() {
     return (
-        <section className="py-20 px-6 relative z-10" id="about">
+        <ScrollReveal className="py-20 px-6" id="about">
             <div className="container mx-auto max-w-4xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     <span className="text-neon-violet">About</span> Me
                 </h2>
 
-                <Card className="border-l-4 border-l-neon-cyan">
+                <Card className="border-l-4 border-l-neon-cyan" variant="liquid">
                     <div className="grid md:grid-cols-[1fr_2fr] gap-8 items-center">
                         {/* Placeholder for potential profile image or avatar if desired, using a cyber graphical element for now */}
                         <div className="flex justify-center">
@@ -33,6 +34,6 @@ export function About() {
                     </div>
                 </Card>
             </div>
-        </section>
+        </ScrollReveal>
     );
 }

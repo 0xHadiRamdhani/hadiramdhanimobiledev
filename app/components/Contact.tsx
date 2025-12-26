@@ -1,9 +1,10 @@
 import { Card } from "./ui/Card";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { ScrollReveal } from "./ui/ScrollReveal";
 
 export function Contact() {
     return (
-        <section className="py-20 px-6 relative z-10 overflow-hidden" id="contact">
+        <ScrollReveal className="py-20 px-6 overflow-hidden" id="contact">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neon-cyan/5 rounded-full blur-[100px] -z-10" />
 
             <div className="container mx-auto max-w-4xl">
@@ -42,7 +43,7 @@ export function Contact() {
                     </div>
 
                     {/* Contact Form */}
-                    <Card className="p-8">
+                    <Card className="p-8" variant="liquid">
                         <form className="space-y-6">
                             <div>
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
@@ -64,6 +65,7 @@ export function Contact() {
                     </Card>
                 </div>
             </div>
-        </section>
+        </ScrollReveal>
     );
 }
+

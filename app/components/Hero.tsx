@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
+import { CircuitBoard } from "./ui/CircuitBoard";
 
 export function Hero() {
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
+                <CircuitBoard />
                 <div className="absolute top-20 left-20 w-72 h-72 bg-purple-600/20 rounded-full blur-[100px] animate-float" />
                 <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
             </div>
