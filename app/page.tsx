@@ -11,6 +11,7 @@ import { Interests } from "./components/Interests";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Terminal } from "./components/Terminal";
+import { CodeShowcase } from "./components/CodeShowcase";
 import { Preloader } from "./components/Preloader";
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
           <Skills />
           <Interests />
           <Projects />
+          <CodeShowcase />
           <Contact />
           <Footer />
           <Terminal />

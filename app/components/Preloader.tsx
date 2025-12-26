@@ -9,7 +9,7 @@ const codeLines = [
     "Verifying security protocols...",
     "Connecting to neural network...",
     "Establishing secure connection...",
-    "Importing 'Antigravity' module...",
+    "Importing 'Cyber-Physical System' module...",
     "Compiling Next.js assets...",
     "Optimizing Tailwind CSS classes...",
     "Hydrating React components...",
