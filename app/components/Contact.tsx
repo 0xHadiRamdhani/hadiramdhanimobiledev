@@ -2,7 +2,7 @@
 
 import { Card } from "./ui/Card";
 import { ScrollReveal } from "./ui/ScrollReveal";
-import { Mail, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useSectionInView } from "../context/UIContext";
 
 export function Contact() {
@@ -58,10 +58,10 @@ export function Contact() {
                     </Card>
 
                     <div className="mt-16 flex justify-center gap-8">
-                        <a href="#" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Github size={24} /></a>
-                        <a href="#" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Linkedin size={24} /></a>
-                        <a href="#" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Twitter size={24} /></a>
-                        <a href="#" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Mail size={24} /></a>
+                        <a href="https://github.com/0xHadiRamdhani" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Github size={24} /></a>
+                        <a href="https://linkedin.com/in/hadiramdhani" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Linkedin size={24} /></a>
+                        <a href="https://instagram.com/hadisoftwareengineer.tsx" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Instagram size={24} /></a>
+                        <a href="mailto:hadsxdevpy@gmail.com" className="text-gray-400 hover:text-neon-cyan transition-colors transform hover:-translate-y-1"><Mail size={24} /></a>
                     </div>
                 </div>
             </ScrollReveal>
