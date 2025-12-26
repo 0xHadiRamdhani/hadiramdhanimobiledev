@@ -3,9 +3,54 @@
 import { motion } from "framer-motion";
 import { CircuitBoard } from "./ui/CircuitBoard";
 import { useSectionInView } from "../context/UIContext";
+import { useState, useEffect } from "react";
 
 export function Hero() {
     const ref = useSectionInView("hero", "cyan");
+    const [text, setText] = useState("");
+    const [delta, setDelta] = useState(200);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [loopNum, setLoopNum] = useState(0);
+    const toRotate = [
+        "Hadi Ramdhani",
+        "Software Engineer",
+        "Mobile Engineer",
+        "FrontEnd Engineer",
+        "BackEnd Engineer"
+    ];
+
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+
+        return () => { clearInterval(ticker) };
+    }, [text]);
+
+    const tick = () => {
+        let i = loopNum % toRotate.length;
+        let fullText = toRotate[i];
+        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+
+        setText(updatedText);
+
+        if (isDeleting) {
+            setDelta(prevDelta => prevDelta / 2);
+        }
+
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true);
+            setDelta(2000); // Pause at end
+        } else if (isDeleting && updatedText === "") {
+            setIsDeleting(false);
+            setLoopNum(loopNum + 1);
+            setDelta(100); // Fast typing start
+        } else {
+            // Normal typing speed
+            // Randomize slightly for realism
+            setDelta(isDeleting ? 50 : 150 - Math.random() * 50);
+        }
+    };
 
     return (
         <section ref={ref} className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -25,8 +70,8 @@ export function Hero() {
                     <h2 className="text-neon-cyan text-xl md:text-2xl font-light tracking-widest mb-4">
                         HELLO WORLD, I AM
                     </h2>
-                    <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-linear-to-r from-white via-gray-200 to-gray-500 pb-2">
-                        Hadi Ramdhani
+                    <h1 className="text-4xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-linear-to-r from-white via-gray-200 to-gray-500 pb-2 min-h-[1.2em]">
+                        {text}<span className="animate-pulse text-neon-cyan">|</span>
                     </h1>
                     <div className="h-px w-24 bg-neon-cyan mx-auto mb-8 shadow-[0_0_10px_#00f3ff]" />
 

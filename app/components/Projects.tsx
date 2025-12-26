@@ -7,25 +7,25 @@ import { Folder, ExternalLink, Github } from "lucide-react";
 
 const projects = [
     {
-        title: "Cyber Portfolio",
-        description: "A futuristic portfolio website built with Next.js, Tailwind, and Framer Motion. Features antigravity mechanics and liquid glass effects.",
-        tech: ["Next.js", "Tailwind", "Framer Motion"],
-        github: "#",
-        link: "#"
+        title: "Pentesting Kernel",
+        description: "Pentesting Kernel is a specialized operating system kernel designed specifically for penetration testing, security research, and digital forensics. Built from scratch in C for x86_64 architecture, this kernel provides a comprehensive platform for security professionals to conduct advanced security testing and analysis.",
+        tech: ["C", "x86_64", "Penetration Testing"],
+        github: "https://github.com/0xHadiRamdhani/cate-kernel",
+        link: "https://github.com/0xHadiRamdhani/cate-kernel"
     },
     {
-        title: "E-Commerce App",
-        description: "Full-stack mobile application for online shopping using Flutter and Firebase. Includes real-time updates and secure payments.",
-        tech: ["Flutter", "Firebase", "Stripe"],
-        github: "#",
-        link: "#"
+        title: "DevSecOps Learning Sandbox",
+        description: "A Flutter-based cybersecurity learning app that teaches basic security concepts through gamification and real-life vulnerability simulations.",
+        tech: ["Elysia", "Flutter", "Firebase", "Stripe"],
+        github: "https://github.com/0xHadiRamdhani/devsecops_learning_sandbox",
+        link: "https://github.com/0xHadiRamdhani/devsecops_learning_sandbox"
     },
     {
-        title: "AI Chat Terminal",
-        description: "Web-based terminal interface that connects to OpenAI's API. Simulates a retro hacking environment.",
-        tech: ["React", "Node.js", "OpenAI"],
-        github: "#",
-        link: "#"
+        title: "VenomGo",
+        description: "A comprehensive collection of penetration testing tools built with Go, featuring high performance, concurrent processing, and advanced features. Now with a beautiful Terminal User Interface (TUI)!",
+        tech: ["Go", "Terminal", "Penetration Testing"],
+        github: "https://github.com/0xHadiRamdhani/simple-pentest-go",
+        link: "https://github.com/0xHadiRamdhani/simple-pentest-go"
     }
 ];
 

@@ -48,10 +48,10 @@ export function Terminal() {
         setInput("");
     };
 
-    // Auto-minimize on mobile (Only on mount)
+    // Auto-close on mobile (Only on mount)
     useEffect(() => {
         if (window.innerWidth < 768) {
-            setIsMinimized(true);
+            setIsOpen(false);
         }
     }, []);
 

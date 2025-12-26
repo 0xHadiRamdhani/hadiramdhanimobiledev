@@ -35,7 +35,7 @@ export function Header() {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <a href="#" className="text-2xl font-bold tracking-tighter z-50">
-                    H<span className="text-neon-cyan">.</span>R
+                    Hadi<span className="text-neon-cyan">.</span>Ramdhani
                 </a>
 
                 {/* Desktop Nav */}
