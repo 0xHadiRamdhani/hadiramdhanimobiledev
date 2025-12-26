@@ -1,81 +1,71 @@
+"use client";
+
 import { Card } from "./ui/Card";
-import { Github, ExternalLink } from "lucide-react";
 import { ScrollReveal } from "./ui/ScrollReveal";
-import { MechanicalText } from "./ui/MechanicalText";
+import { useSectionInView } from "../context/UIContext";
+import { Folder, ExternalLink, Github } from "lucide-react";
 
 const projects = [
     {
         title: "Cyber Portfolio",
-        description: "A futuristic portfolio website built with Next.js and Tailwind CSS featuring antigravity animations and glassmorphism.",
+        description: "A futuristic portfolio website built with Next.js, Tailwind, and Framer Motion. Features antigravity mechanics and liquid glass effects.",
         tech: ["Next.js", "Tailwind", "Framer Motion"],
-        link: "#",
-        stats: "Design 10/10"
+        github: "#",
+        link: "#"
     },
     {
-        title: "Flutter E-Commerce",
-        description: "A modern mobile shopping application with smooth transitions and state management.",
-        tech: ["Flutter", "Dart", "Firebase"],
-        link: "#",
-        stats: "Speed 98%"
+        title: "E-Commerce App",
+        description: "Full-stack mobile application for online shopping using Flutter and Firebase. Includes real-time updates and secure payments.",
+        tech: ["Flutter", "Firebase", "Stripe"],
+        github: "#",
+        link: "#"
     },
     {
-        title: "Secure Chat App",
-        description: "End-to-end encrypted messaging plarform focusing on privacy and security.",
-        tech: ["Python", "Cryptography", "Socket.io"],
-        link: "#",
-        stats: "Secure 100%"
+        title: "AI Chat Terminal",
+        description: "Web-based terminal interface that connects to OpenAI's API. Simulates a retro hacking environment.",
+        tech: ["React", "Node.js", "OpenAI"],
+        github: "#",
+        link: "#"
     }
 ];
 
 export function Projects() {
+    const ref = useSectionInView("projects", "amber");
+
     return (
-        <ScrollReveal className="py-20 px-6" id="projects">
-            <div className="container mx-auto max-w-6xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-                    Featured <span className="text-neon-violet">Projects</span>
-                </h2>
+        <section ref={ref} id="projects">
+            <ScrollReveal className="py-20 px-6">
+                <div className="container mx-auto max-w-6xl">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
+                        <span className="text-neon-cyan">03. </span> Selected Projects
+                    </h2>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <Card key={index} delay={index * 0.2} className="group hover:border-neon-cyan/50" variant="liquid">
-                            <div className="h-full flex flex-col">
-                                <div className="mb-6 flex justify-between items-start">
-                                    <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 group-hover:from-neon-cyan group-hover:to-white transition-all duration-300">
-                                        {project.title}
-                                    </h3>
-                                    <a href={project.link} className="text-gray-400 hover:text-white transition-colors">
-                                        <Github size={20} />
-                                    </a>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {projects.map((project, index) => (
+                            <Card key={index} className="h-full flex flex-col" variant="liquid">
+                                <div className="flex justify-between items-start mb-6">
+                                    <Folder className="text-neon-cyan w-10 h-10" />
+                                    <div className="flex gap-4 text-gray-400">
+                                        <a href={project.github} className="hover:text-white transition-colors"><Github size={20} /></a>
+                                        <a href={project.link} className="hover:text-white transition-colors"><ExternalLink size={20} /></a>
+                                    </div>
                                 </div>
 
-                                <p className="text-gray-400 mb-6 flex-grow leading-relaxed">
+                                <h3 className="text-xl font-bold mb-2 group-hover:text-neon-cyan transition-colors">{project.title}</h3>
+                                <div className="bg-white/5 p-3 rounded-lg mb-4 text-sm text-gray-300 grow">
                                     {project.description}
-                                </p>
-
-                                <div className="mb-6 pt-4 border-t border-white/5">
-                                    <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider font-mono">System Metrics</div>
-                                    <MechanicalText text={project.stats} variant="meter" className="text-sm font-bold" />
                                 </div>
 
-                                <div className="space-y-4 mt-auto">
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.tech.map((t) => (
-                                            <span key={t} className="px-3 py-1 text-xs font-mono rounded-full bg-white/5 border border-white/10 text-neon-cyan">
-                                                {t}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    <div className="pt-4 border-t border-white/5 flex items-center text-sm text-gray-500 group-hover:text-neon-violet transition-colors">
-                                        <ExternalLink size={16} className="mr-2" />
-                                        <span>View Project</span>
-                                    </div>
+                                <div className="flex gap-3 text-xs font-mono text-gray-500 mt-auto">
+                                    {project.tech.map((t, i) => (
+                                        <span key={i}>{t}</span>
+                                    ))}
                                 </div>
-                            </div>
-                        </Card>
-                    ))}
+                            </Card>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </ScrollReveal>
+            </ScrollReveal>
+        </section>
     );
 }

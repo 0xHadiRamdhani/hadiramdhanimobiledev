@@ -14,12 +14,14 @@ import { Terminal } from "./components/Terminal";
 import { CodeShowcase } from "./components/CodeShowcase";
 import { Preloader } from "./components/Preloader";
 import { MouseParticles } from "./components/ui/MouseParticles";
+import { DynamicBackground } from "./components/ui/DynamicBackground";
+import { UIProvider } from "./context/UIContext";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <>
+    <UIProvider>
       <AnimatePresence mode="wait">
         {loading && <Preloader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
@@ -31,19 +33,20 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="min-h-screen relative selection:bg-neon-cyan selection:text-black"
         >
+          <DynamicBackground />
           <MouseParticles />
           <Header />
           <Hero />
           <About />
           <Skills />
-          <Interests />
           <Projects />
           <CodeShowcase />
+          <Interests />
           <Contact />
           <Footer />
           <Terminal />
         </motion.main>
       )}
-    </>
+    </UIProvider>
   );
 }
