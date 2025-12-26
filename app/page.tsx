@@ -13,6 +13,7 @@ import { Footer } from "./components/Footer";
 import { Terminal } from "./components/Terminal";
 import { CodeShowcase } from "./components/CodeShowcase";
 import { Preloader } from "./components/Preloader";
+import { MouseParticles } from "./components/ui/MouseParticles";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="min-h-screen relative selection:bg-neon-cyan selection:text-black"
         >
+          <MouseParticles />
           <Header />
           <Hero />
           <About />

@@ -20,7 +20,7 @@ export function Hero() {
                     <h2 className="text-neon-cyan text-xl md:text-2xl font-light tracking-widest mb-4">
                         HELLO WORLD, I AM
                     </h2>
-                    <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-500 pb-2">
+                    <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-linear-to-r from-white via-gray-200 to-gray-500 pb-2">
                         Hadi Ramdhani
                     </h1>
                     <div className="h-px w-24 bg-neon-cyan mx-auto mb-8 shadow-[0_0_10px_#00f3ff]" />
@@ -35,22 +35,66 @@ export function Hero() {
                     </motion.p>
                 </motion.div>
 
-                {/* Floating Code Elements */}
-                {/* Decorative elements representing antigravity code blocks */}
-                <motion.div
-                    className="absolute -left-4 top-1/2 hidden md:block text-gray-800 font-mono text-sm pointer-events-none select-none"
-                    animate={{ y: [0, -30, 0], rotate: [0, 5, 0] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    {"<System />"}
-                </motion.div>
-                <motion.div
-                    className="absolute -right-4 bottom-1/3 hidden md:block text-gray-800 font-mono text-sm pointer-events-none select-none"
-                    animate={{ y: [0, 40, 0], rotate: [0, -5, 0] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    {"{cybersecurity: true}"}
-                </motion.div>
+                {/* Extended Floating Anti-Gravity Elements */}
+                {[
+                    { content: "<System />", top: "20%", left: "10%", delay: 0, duration: 8, rotate: 5, y: -30 },
+                    { content: "{cybersecurity: true}", top: "70%", right: "10%", delay: 1, duration: 10, rotate: -5, y: 40 },
+                    { content: "0x1F4A9", top: "15%", right: "20%", delay: 2, duration: 7, rotate: 10, y: -25 },
+                    { content: "git push --force", top: "85%", left: "15%", delay: 1.5, duration: 9, rotate: -8, y: 35 },
+                    { content: "function() => {}", top: "40%", left: "5%", delay: 3, duration: 11, rotate: 3, y: -45 },
+                    { content: "[]", top: "60%", right: "5%", delay: 2.5, duration: 6, rotate: -12, y: 20 },
+                    { content: "404", top: "30%", right: "30%", delay: 0.5, duration: 8.5, rotate: 6, y: -35, className: "text-neon-violet/30" },
+                ].map((item, index) => (
+                    <motion.div
+                        key={index}
+                        className={`absolute hidden md:block font-mono text-sm pointer-events-none select-none ${item.className || "text-white/10"}`}
+                        style={{ top: item.top, left: item.left, right: item.right }}
+                        initial={{ y: 0, rotate: 0 }}
+                        animate={{
+                            y: [0, item.y, 0],
+                            rotate: [0, item.rotate, 0],
+                            opacity: [0.3, 0.6, 0.3]
+                        }}
+                        transition={{
+                            duration: item.duration,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: item.delay
+                        }}
+                    >
+                        {item.content}
+                    </motion.div>
+                ))}
+
+                {/* Geometric Floating Shapes */}
+                {[
+                    { width: 40, height: 40, top: "25%", left: "25%", border: "border-neon-cyan/20", delay: 0, duration: 12 },
+                    { width: 60, height: 60, top: "65%", right: "25%", border: "border-neon-violet/20", delay: 2, duration: 15 },
+                    { width: 20, height: 20, top: "80%", left: "40%", border: "border-white/10", delay: 4, duration: 8 },
+                ].map((shape, i) => (
+                    <motion.div
+                        key={`shape-${i}`}
+                        className={`absolute border ${shape.border} rounded-lg`}
+                        style={{
+                            width: shape.width,
+                            height: shape.height,
+                            top: shape.top,
+                            left: shape.left,
+                            right: shape.right
+                        }}
+                        animate={{
+                            y: [0, -40, 0],
+                            rotate: [0, 180, 360],
+                            scale: [1, 1.1, 1]
+                        }}
+                        transition={{
+                            duration: shape.duration,
+                            repeat: Infinity,
+                            ease: "linear",
+                            delay: shape.delay
+                        }}
+                    />
+                ))}
             </div>
 
             {/* Scroll Indicator */}
@@ -59,7 +103,7 @@ export function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
             >
-                <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-neon-cyan to-transparent" />
+                <div className="w-px h-16 bg-linear-to-b from-transparent via-neon-cyan to-transparent" />
             </motion.div>
         </section>
     );
