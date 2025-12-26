@@ -48,6 +48,21 @@ export function Terminal() {
         setInput("");
     };
 
+    // Auto-minimize on mobile
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setIsMinimized(true);
+            }
+        };
+
+        // Check on mount
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     // Auto-scroll to bottom
     useEffect(() => {
         if (logsEndRef.current) {
