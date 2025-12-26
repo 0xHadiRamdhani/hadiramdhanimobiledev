@@ -48,19 +48,11 @@ export function Terminal() {
         setInput("");
     };
 
-    // Auto-minimize on mobile
+    // Auto-minimize on mobile (Only on mount)
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < 768) {
-                setIsMinimized(true);
-            }
-        };
-
-        // Check on mount
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
+        if (window.innerWidth < 768) {
+            setIsMinimized(true);
+        }
     }, []);
 
     // Auto-scroll to bottom
