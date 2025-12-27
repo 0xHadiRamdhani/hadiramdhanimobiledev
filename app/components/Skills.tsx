@@ -52,7 +52,7 @@ export function Skills() {
             <ScrollReveal className="container mx-auto max-w-4xl px-6 relative z-10">
                 {/* Section Header */}
                 <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-                    <span className="text-neon-cyan">02. </span> Tech Stack
+                    <span className="text-neon-cyan">02. </span> Skill Stack
                 </h2>
 
                 {/* Skills Container */}
