@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import { Card } from "./ui/Card";
 import { ScrollReveal } from "./ui/ScrollReveal";
 import { useSectionInView } from "../context/UIContext";
+import { TimeWeather } from "./TimeWeather";
+import { GitHubActivity } from "./GitHubActivity";
+import { DynamicBio } from "./DynamicBio";
+import { DetailGrid } from "./DetailGrid";
 
 export function About() {
     const ref = useSectionInView("about", "violet");
@@ -19,30 +23,25 @@ export function About() {
                         <span className="text-neon-cyan">01. </span> <span className="text-white">About Me</span>
                     </h2>
 
-                    <div className="grid md:grid-cols-[2fr_3fr] gap-10 items-center">
-                        {/* Profile Image / Avatar Placeholder */}
-                        <div className="relative group">
-                            <div className="absolute inset-0 bg-neon-cyan/20 rounded-2xl blur-md group-hover:bg-neon-cyan/40 transition-all duration-500" />
-                            <Card className="p-0 overflow-hidden relative aspect-square flex items-center justify-center bg-black/50" variant="liquid">
-                                <span className="text-6xl">👨‍💻</span>
-                                {/* Add your image here: <img src="/me.jpg" alt="Hadi" className="w-full h-full object-cover" /> */}
-                            </Card>
+                    <div className="grid md:grid-cols-[2fr_3fr] gap-10 items-start">
+                        {/* Left Column: Profile & Stats */}
+                        <div className="space-y-6">
+                            {/* Profile Image / Avatar Placeholder */}
+                            <div className="relative group">
+                                <div className="absolute inset-0 bg-neon-cyan/20 rounded-2xl blur-md group-hover:bg-neon-cyan/40 transition-all duration-500" />
+                                <Card className="p-0 overflow-hidden relative aspect-square flex items-center justify-center bg-black/50" variant="liquid">
+                                    <span className="text-6xl">👨‍💻</span>
+                                    {/* Add your image here: <img src="/me.jpg" alt="Hadi" className="w-full h-full object-cover" /> */}
+                                </Card>
+                            </div>
+
+                            {/* Time & Weather Widget */}
+                            <TimeWeather />
                         </div>
 
                         {/* Bio Text */}
                         <div className="space-y-6 text-gray-300">
-                            <p>
-                                Hello! I'm <span className="text-neon-cyan font-semibold">Hadi Ramdhani</span>, a passionate software engineering student specializing in
-                                <span className="text-neon-violet"> Mobile and Frontend Development</span>.
-                            </p>
-                            <p>
-                                My journey involves building sleek, high-performance applications that merge
-                                <span className="text-white font-mono"> aesthetic design</span> with
-                                <span className="text-white font-mono"> robust functionality</span>.
-                            </p>
-                            <p>
-                                I am currently exploring the depths of <span className="text-neon-cyan">Cyber-Physical Systems</span> and integrating them into modern web experiences.
-                            </p>
+                            <DynamicBio />
 
                             <ul className="grid grid-cols-2 gap-2 font-mono text-sm mt-4">
                                 <li className="flex items-center gap-2">
@@ -58,7 +57,15 @@ export function About() {
                                     <span className="text-neon-cyan">▹</span> Tailwind CSS
                                 </li>
                             </ul>
+
+                            {/* Detail Grid */}
+                            <DetailGrid />
                         </div>
+                    </div>
+
+                    {/* GitHub Activity Graph */}
+                    <div className="mt-12">
+                        <GitHubActivity />
                     </div>
                 </div>
             </ScrollReveal>

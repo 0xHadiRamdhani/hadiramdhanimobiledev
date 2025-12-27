@@ -5,7 +5,7 @@ import { ScrollReveal } from "./ui/ScrollReveal";
 import { useSectionInView } from "../context/UIContext";
 import { useState, useEffect } from "react";
 
-// SVG Icons
+// URL Icons
 const Icons = {
     React: (
         <img src="https://skillicons.dev/icons?i=react" height="60" alt="react logo" />
